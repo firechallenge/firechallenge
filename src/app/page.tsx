@@ -1,3 +1,5 @@
+import FlameShader from "../components/flame";
+
 export default function Home() {
   return (
     <div>
@@ -11,18 +13,25 @@ export default function Home() {
         </p>
       </section>
       <section className="flex flex-row justify-center gap-8 items-center mt-10">
-        <div className="w-[350px] h-[300px] bg-neutral-800 flex flex-col items-center justify-center rounded-xl border border-neutral-700 cursor-pointer transition-all duration-200 hover:border-blue-500">
+        <a
+          href="/topics/python"
+          className="w-[350px] h-[300px] bg-neutral-800 flex flex-col items-center justify-center rounded-xl border border-neutral-700 cursor-pointer transition-all duration-200 hover:border-blue-500 relative"
+        >
           <h3 className="text-center text-3xl font-bold font-mono">Python</h3>
           <p className="w-[250px] text-center tracking-wide text-neutral-400 mt-4">
             The Python Programming Language
           </p>
-        </div>
-        <div className="w-[350px] h-[300px] bg-neutral-800 flex flex-col items-center justify-center rounded-xl border border-neutral-700 cursor-pointer transition-all duration-200 hover:border-blue-500">
+        </a>
+        <a
+          href="/topics/web"
+          className="w-[350px] h-[300px] bg-neutral-800 flex flex-col items-center justify-center rounded-xl border border-neutral-700 cursor-pointer transition-all duration-200 hover:border-blue-500 relative"
+        >
           <h3 className="text-center text-3xl font-bold font-mono">Web Tech</h3>
           <p className="w-[250px] text-center tracking-wide text-neutral-400 mt-4">
             Web technologies including HTML, JS, CSS, TS, etc.
           </p>
-        </div>
+          {/* <FlameShader /> */}
+        </a>
       </section>
     </div>
   );

@@ -24,18 +24,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="min-h-screen">
+    <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased p-3 min-h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased p-3`}
       >
         <header className="flex justify-between bg-zinc-800 py-2 px-4 rounded-xl">
           <div className="flex flex-row items-center gap-4">
-            <Image src="/logo4.svg" alt="Logo" width={30} height={45} />
+            <span className="w-[30px] h-[45px] flex items-center justify-center">
+              <Image src="/logo4.svg" alt="Logo" width={30} height={45} />
+            </span>
             <h1 className="text-2xl font-bold">Fire Challenge</h1>
           </div>
           <nav></nav>
         </header>
-        <main className="min-h-screen">{children}</main>
+        <main>{children}</main>
       </body>
     </html>
   );
