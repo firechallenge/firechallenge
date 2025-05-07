@@ -46,7 +46,7 @@ export const QuestionSettings = ({ question }: Props) => {
       {/* Duration */}
       <div className="relative dropdown dropdown-bottom dropdown-end mt-4">
         <div tabIndex={0} role="button" className="btn">
-          Change Duration
+          Duration - {question.settings.duration} seconds
         </div>
         <div
           tabIndex={0}
@@ -55,8 +55,10 @@ export const QuestionSettings = ({ question }: Props) => {
           <ul className="list bg-base-100 rounded-box shadow-md">
             {availableDurations.map((duration) => (
               <li
-                className="list-row cursor-pointer hover:bg-base-200 transition-colors duration-200 rounded-none"
+                className="list-row cursor-pointer hover:bg-base-200 transition-colors duration-200 rounded-none aria-selected:bg-base-200 aria-selected:text-black aria-selected:font-bold aria-selected:opacity-100"
                 key={duration.value}
+                role="option"
+                aria-selected={duration.value === question.settings.duration}
                 onClick={() =>
                   dispatch(
                     updateQuestion({
