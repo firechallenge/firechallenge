@@ -12,13 +12,13 @@ const initialState: QuestionTypeState = {
       id: "multiple-choice",
       name: "Multiple Choice",
       description: "Multiple choice question type",
-      image: "https://img.daisyui.com/images/profile/demo/1@94.webp",
+      image: "/images/multiple-choice.jpg",
     },
     {
       id: "true-false",
       name: "True or False",
       description: "True or False question type",
-      image: "https://img.daisyui.com/images/profile/demo/2@94.webp",
+      image: "/images/true-false.jpg",
     },
   ],
 };

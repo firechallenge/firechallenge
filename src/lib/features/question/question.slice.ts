@@ -32,6 +32,9 @@ const questionSlice = createSlice({
         ...action.payload,
         id: state.questions.length.toString(),
         name: `Question ${state.questions.length + 1}`,
+        settings: {
+          duration: 10,
+        },
       });
       state.questionEditingIndex = state.questions.length - 1;
       state.questionEditingId = state.questions[state.questionEditingIndex].id;

@@ -26,11 +26,11 @@ export const QuestionTypes = ({ onSelect, activeQuestionType }: Props) => {
         >
           <div className="flex items-center">
             <Image
-              className="size-10 rounded-box"
+              className="w-12"
               src={questionType.image}
               alt={questionType.name}
-              width={40}
-              height={40}
+              width={96}
+              height={69}
             />
           </div>
           <div className="flex flex-col">

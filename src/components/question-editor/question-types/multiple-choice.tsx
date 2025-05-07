@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { Question } from "@/models/question.model";
 import { updateQuestion } from "@/lib/features/question/question.slice";
+import { IconPlus } from "@tabler/icons-react";
 
 interface Props {
   question: Question;
@@ -33,7 +34,11 @@ export const MultipleChoiceQuestionTypeEditor = ({ question }: Props) => {
       { id: "4", text: "Option 4", isCorrect: false },
     ];
 
-    if (question.options && question.options.length !== options.length) {
+    if (
+      question.options &&
+      question.options.length > 0 &&
+      options.length === 0
+    ) {
       setOptions(question.options);
     }
 
@@ -54,6 +59,19 @@ export const MultipleChoiceQuestionTypeEditor = ({ question }: Props) => {
         options,
       })
     );
+  };
+
+  const handleAddOption = () => {
+    setOptions([
+      ...options,
+      {
+        id: (options.length + 1).toString(),
+        text: "Option " + (options.length + 1),
+        isCorrect: false,
+      },
+    ]);
+
+    handleSave();
   };
 
   return (
@@ -100,6 +118,14 @@ export const MultipleChoiceQuestionTypeEditor = ({ question }: Props) => {
             </h2>
           </div>
         ))}
+        <button
+          onClick={handleAddOption}
+          className="btn btn-ghost btn-lg col-start-1 col-span-2"
+          disabled={options.length >= 6}
+        >
+          <IconPlus /> Add Option
+          {options.length >= 6 && " (Max 6 options)"}
+        </button>
       </div>
     </div>
   );
